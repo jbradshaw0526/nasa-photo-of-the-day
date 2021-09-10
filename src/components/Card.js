@@ -5,26 +5,26 @@ const ImageDiv = styled.div`
   width: 60%;
   padding: 10px;
   margin: 0 auto;
-  background-color: black;
-  opacity: .8;
+  background-color: #301934;
   border: 2px solid grey;
   border-radius: 3px;
 `;
 
 const ActualImage = styled.img`
   max-width: 100%;
-  border-radius: 45px;
+  border-radius: 45%;
 `;
 
 const ExplanationDiv = styled.div`
-font-family: 'Montserrat', sans-serif;
+font-family: 'Dancing+Script', sans-serif;
 width: 75%;
 color: white;
 padding: 15px;
 margin: 0 auto;
-opacity: .8;
+opacity: 1;
 border-radius: 3px;
 `;
+
 
 function Card(props) {
 // Display a loading message while the data is fetching
