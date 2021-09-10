@@ -1,15 +1,15 @@
 import React, { useState,useEffect } from "react";
 import "./App.css";
 import axios from 'axios';
-import Title from './assets/Title';
-import Image from './assets/Image';
+import Title from './components/Title';
+import Card from './components/Card';
 
 function App() {
   // const title = "My title";
   const [data, setData] = useState([]);
 
   useEffect(()=> {
-    axios.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2012-03-14')
+    axios.get('https://api.nasa.gov/planetary/apod?api_key=gwU1S42gZDu3ibu1e0Xv8OCvOy0mS7HYgq12LuMK')
     .then(res =>{
       const data = res.data;
       setData(data);
@@ -20,9 +20,8 @@ function App() {
   },[])
   return (
     <div className="App">
-<h1>Nasa Photo of the Day</h1>
-<Title title={data.title}/>
-<Image image={data.url}/>
+      <Title title={data.title} copyright={data.copyright}/>
+      <Card image={data.hdurl} explanation={data.explanation} date={data.date}/>
 </div>
 );
 }
